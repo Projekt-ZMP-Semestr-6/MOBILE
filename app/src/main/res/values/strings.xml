@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Price Tracker</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_authentication">AuthenticationActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_welcome">Witamy ponownie</string>
+    <string name="title_registration">Registration</string>
+    <string name="title_reset_password">Resetuj hasło</string>
+
+    <string name="login_fragment">LoginFragment</string>
+    <string name="registration_fragment">Registration Fragment</string>
+    <string name="login">Login</string>
+    <string name="log_in">Zaloguj się</string>
+    <string name="registration">Załóż konto</string>
+    <string name="login_or_email">Wprowadź login lub adres E-mail</string>
+    <string name="email_hint">Podaj adres E-mail</string>
+    <string name="password">Podaj hasło</string>
+    <string name="title_login">Zaloguj się</string>
+    <!--    <string name="title_registration">Załóż konto</string>-->
+    <string name="password_repeat">Powtórz hasło</string>
+    <string name="sign_up_title">Zarejestruj się</string>
+    <string name="forgot_password">Zapomniałeś hasła?</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+
+    <!--    FRAGMENTS   -->
+    <string name="fragment_home">Home</string>
+    <string name="fragment_dashboard">Dashboard</string>
+    <string name="fragment_notification">Notification</string>
+    <string name="fragment_profile">Profile</string>
+
+</resources>
