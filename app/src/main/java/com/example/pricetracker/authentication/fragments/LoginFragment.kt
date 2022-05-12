@@ -14,7 +14,9 @@ import com.example.pricetracker.authentication.AuthenticationViewModel
 import com.example.pricetracker.dashboard.DashboardActivity
 import com.example.pricetracker.data.network.UIState
 import com.example.pricetracker.databinding.FragmentLoginBinding
+import kotlinx.coroutines.InternalCoroutinesApi
 
+@InternalCoroutinesApi
 class LoginFragment : Fragment() {
     private val viewModel: AuthenticationViewModel by activityViewModels()
     private var _binding: FragmentLoginBinding? = null
@@ -61,6 +63,7 @@ class LoginFragment : Fragment() {
                         startActivity(intent)
                         requireActivity().finish()
                     }
+                    else -> {}
                 }
             }
         }

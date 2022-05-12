@@ -53,8 +53,9 @@ class AuthenticationViewModel @Inject constructor(
             dataStore.getAccessToken().let {
                 it.collectLatest { token ->
                     if (token.isNotBlank()) {
+                        Log.i("MyTag", "if (token.isNotBlank()) { token = $token")
                         // Redirect user to Dashboard instant
-//                        _uiState.postValue(UIState.OnSuccess)
+                        _uiState.postValue(UIState.OnSuccess)
                     }
                 }
             }

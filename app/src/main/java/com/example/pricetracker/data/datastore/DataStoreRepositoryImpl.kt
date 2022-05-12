@@ -21,17 +21,19 @@ class DataStoreRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getAccessToken(): Flow<String> = prefsDataStore.data
-        .catch { exception ->
-            when (exception) {
-                is IOException -> {
-                    emit(emptyPreferences())
+    override suspend fun getAccessToken(): Flow<String> =
+        prefsDataStore.data
+            .catch { exception ->
+                when (exception) {
+                    is IOException -> {
+                        emit(emptyPreferences())
+                    }
+                    else -> throw exception
                 }
-                else -> throw exception
             }
-        }.map { preferences ->
-            preferences[ACCESS_TOKEN] ?: ""
-        }
+            .map { preferences ->
+                preferences[ACCESS_TOKEN] ?: ""
+            }
 
     override suspend fun saveIsFirstLaunch(data: Boolean) {
         prefsDataStore.edit { preferences ->

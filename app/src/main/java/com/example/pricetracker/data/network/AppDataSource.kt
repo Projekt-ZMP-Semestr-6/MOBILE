@@ -1,24 +1,37 @@
 package com.example.pricetracker.data.network
 
 import com.example.pricetracker.data.models.*
+import retrofit2.HttpException
 import retrofit2.Response
 import javax.inject.Inject
 
 class AppDataSource @Inject constructor(private val userServices: RetrofitService) {
     suspend fun getUser(): UserModel? {
-        return userServices.getUser().body()
+        userServices.getUser().let {
+            if (!it.isSuccessful) throw HttpException(it)
+            return it.body()
+        }
     }
 
     suspend fun updatePassword(updatePasswordModel: UpdatePasswordModel): Response<Any> {
-        return userServices.updatePassword(updatePasswordModel)
+        userServices.updatePassword(updatePasswordModel).let {
+            if (!it.isSuccessful) throw HttpException(it)
+            return it
+        }
     }
 
     suspend fun updateName(nameModel: NameModel): Response<Any> {
-        return userServices.updateName(nameModel)
+        userServices.updateName(nameModel).let {
+            if (!it.isSuccessful) throw HttpException(it)
+            return it
+        }
     }
 
     suspend fun updateEmail(emailModel: UpdateEmailModel): Response<Any> {
-        return userServices.updateEmail(emailModel)
+        userServices.updateEmail(emailModel).let {
+            if (!it.isSuccessful) throw HttpException(it)
+            return it
+        }
     }
 
     suspend fun deleteAccount(passwordModel: PasswordModel): Response<Any> {

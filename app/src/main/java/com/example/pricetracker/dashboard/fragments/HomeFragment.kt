@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.pricetracker.dashboard.DashboardViewModel
 import com.example.pricetracker.databinding.FragmentHomeBinding
+import kotlinx.coroutines.InternalCoroutinesApi
 
+@InternalCoroutinesApi
 class HomeFragment : Fragment() {
     private val viewModel: DashboardViewModel by activityViewModels()
     private var _binding: FragmentHomeBinding? = null

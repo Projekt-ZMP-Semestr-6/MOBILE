@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.pricetracker.dashboard.DashboardViewModel
 import com.example.pricetracker.databinding.FragmentNotificationsBinding
+import kotlinx.coroutines.InternalCoroutinesApi
 
+@InternalCoroutinesApi
 class NotificationsFragment : Fragment() {
     private val viewModel: DashboardViewModel by activityViewModels()
     private var _binding: FragmentNotificationsBinding? = null
