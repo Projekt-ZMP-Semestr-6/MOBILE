@@ -1,54 +1,38 @@
-Price Tracker App
+This is a template project for Android Studio that allows you to create an android webview application in minutes. You can use it to create a simple app for your website or as a starting point for your HTML5 based android app.
 
-The application is designed to track the current prices of products and notification users about new prices changes.
-Application is still in development stage and will constantly improvement by new features and bug fixing.
+### Getting started
 
+[Download](https://github.com/azhinu/Web-to-App/archive/master.zip) or clone this repository and import it into Android Studio.
 
+### Using a remote source
 
-    Description:
-        - Init project
-        - Add Readme.md file
-        - Create basic Authentication views: Login/Registration/ResetPassword Screens
-        - Create Dashboard Activity Views supported with bottom navigation bar, fragments and navigation graph JetPack
-        - Disable application dark mode
+1. Open `app/src/main/res/values/strings.xml` and edit `app_name` and `web_url` strings.
 
-    Pattern and coding styles applied:
-        - MVVM
-        - navigation between fragments with navigation graph and navigation controller by JetPack
-        - view binding / data binding
-        - single Activity modules
-        - shared activityViewModels provided by delegates
+2. Open the `app/scr/main/java/com.example.app/MyWebViewClient.java` file and replace `example.com` on line **16** with your hostname.
 
+	```java
+	String hostname = "example.com";
+	```
+3. If you want to change package name, go to `app/build.gradle` and change it on line **7**./
 
-    2 -> task_2/implement_api_repository
-    Description:
-        - Implement RetrofitService with Okhttp and GsonConverter
-        - Implement AuthDatasource and AppDataSource to communicate with API
-        - Add api models data classes
-        - Implement AuthInterceptor
+Example:
 
-    Pattern and coding styles applied:
-        - Dependency injection with @Provides annotations
-        - Separate DataSources
-        - Kotlin data classes
-        - Single Responsibility classes
-        - Separate functions logic by interfaces
-        - Extract constants
+```java
+	applicationId "com.example.app"
+```
 
+### Using a local source
 
-    3 -> task_3/implement_authentication
-    Description:
-        - Connect Authentication logic with backend
-        - Implement viewModel functions with UiState
-        - Observe UIState in activity and fragments
-        - Add activity progressBar
-        - Add test mocks user inputs
-        - Add repository !responce.isSuccessfull checks
-        - Global exception handler for Activity
+If you want to create a local HTML5 android app put all your files (including your `index.html`) in the `assets` directory
 
-    Pattern and coding styles applied:
-        - UiState sealed classes
-        - ViewModelScope with exceptionHandler
-        - LiveData with observers
-        - View onClick listeners for button
-        - Extract string
+### Branding
+
+If you want to change package name, go to `app/build.gradle` and change it on line **7**./
+
+Example:
+
+```java
+	applicationId "com.example.app"
+```
+
+To change application icon, replace files in `app/src/main/res/mipmap-*` with your icon.
