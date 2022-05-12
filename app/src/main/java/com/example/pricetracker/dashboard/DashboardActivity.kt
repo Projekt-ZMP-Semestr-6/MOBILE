@@ -10,7 +10,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.pricetracker.R
 import com.example.pricetracker.databinding.ActivityDashboardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DashboardActivity : AppCompatActivity() {
     private val viewModel: DashboardViewModel by viewModels()
     private var binding: ActivityDashboardBinding? = null
@@ -23,15 +25,15 @@ class DashboardActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_dashboard) as NavHostFragment
         val navController = navHostFragment.navController
-        val appBarConfiguration = AppBarConfiguration(setOf(R.layout.fragment_home, R.layout.fragment_dashboard, R.layout.fragment_notifications, R.layout.fragment_notifications))
-        setupActionBarWithNavController(navController, appBarConfiguration)
         binding?.bottomNavView?.apply {
             this.setupWithNavController(navController)
         }
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_profile))
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = this.findNavController(R.id.nav_host_fragment_activity_authentication)
+        val navController = this.findNavController(R.id.nav_host_fragment_activity_dashboard)
         return navController.navigateUp()
     }
 }

@@ -23,6 +23,7 @@
     <string name="registration">Załóż konto</string>
     <string name="login_or_email">Wprowadź login lub adres E-mail</string>
     <string name="email_hint">Podaj adres E-mail</string>
+    <string name="user_name">Podaj nazwe użytkownika</string>
     <string name="password">Podaj hasło</string>
     <string name="title_login">Zaloguj się</string>
     <!--    <string name="title_registration">Załóż konto</string>-->
@@ -36,5 +37,10 @@
     <string name="fragment_dashboard">Dashboard</string>
     <string name="fragment_notification">Notification</string>
     <string name="fragment_profile">Profile</string>
+
+    <!--    CREDENTIALS    -->
+    <string name="test_user_email_address">test@email.com</string>
+    <string name="test_user_name">Test User</string>
+    <string name="test_user_password">password123</string>
 
 </resources>
