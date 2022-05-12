@@ -4,8 +4,7 @@ The application is designed to track the current prices of products and notifica
 Application is still in development stage and will constantly improvement by new features and bug fixing.
 
 
-Branches:
-    1 -> task_1/init_app_basic_view
+
     Description:
         - Init project
         - Add Readme.md file
