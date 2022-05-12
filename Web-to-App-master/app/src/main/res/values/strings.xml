@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mobile</string>
+<!--    <string name="web_hostname">kibana.lt.loc</string> Doesnt works-->
+    <string name="web_url">https://price-tracker-zmp.netlify.app/</string>
+</resources>
+
+    <!-- To use file as web_url, set it to; "file:///android_asset/index.html"); -->

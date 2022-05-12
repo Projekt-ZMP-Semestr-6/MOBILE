@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Samuel\\Desktop\\Web-to-App-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Samuel\\Desktop\\Web-to-App-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "3,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "56,175",
+                        "endColumns": "43,74",
+                        "endOffsets": "95,245"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,99",
+                        "endColumns": "43,74",
+                        "endOffsets": "94,169"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Samuel\\Desktop\\Web-to-App-master\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "281"
+                    },
+                    "to": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "174",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "438"
+                    }
+                }
+            ]
+        }
+    ]
+}
