@@ -37,4 +37,11 @@ class AppDataSource @Inject constructor(private val userServices: RetrofitServic
     suspend fun deleteAccount(passwordModel: PasswordModel): Response<Any> {
         return userServices.deleteAccount(passwordModel)
     }
+
+    suspend fun getBestsellers(): ArrayList<GameModel>? {
+        userServices.getBestsellers().let {
+            if (!it.isSuccessful) throw HttpException(it)
+            return it.body()
+        }
+    }
 }

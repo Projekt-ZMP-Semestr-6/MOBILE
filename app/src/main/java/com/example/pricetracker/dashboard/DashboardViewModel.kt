@@ -7,10 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pricetracker.data.datastore.DataStoreRepository
-import com.example.pricetracker.data.models.NameModel
-import com.example.pricetracker.data.models.UpdateEmailModel
-import com.example.pricetracker.data.models.UpdatePasswordModel
-import com.example.pricetracker.data.models.UserModel
+import com.example.pricetracker.data.models.*
 import com.example.pricetracker.data.network.AppDataSource
 import com.example.pricetracker.data.network.AuthDataSource
 import com.example.pricetracker.data.network.UIState
@@ -119,20 +116,30 @@ class DashboardViewModel @Inject constructor(
 
     fun logout() {
         viewModelScope.launch(exceptionHandler) {
-            Log.i("MyTag", "fun logout() {")
             _uiState.postValue(UIState.InProgress)
             authDataSource.logout().let{
                 if(it.isSuccessful){
-                    Log.i("MyTag", "fun logout()   if(it.isSuccessful)")
                     _uiState.postValue(UIState.OnSuccess)
                     dataStore.saveAccessToken("")
                 }
                 else{
-                    Log.i("MyTag", " init   else{")
                     _uiState.postValue(UIState.OnFailure)
                 }
             }
-            Log.i("MyTag", " init   else222")
+        }
+    }
+
+    //GAME LOGIC
+    private val _bestsellersList = MutableLiveData<List<GameModel>?>()
+    val bestsellersList: LiveData<List<GameModel>?> = _bestsellersList
+
+    fun getBestsellers() {
+        viewModelScope.launch(exceptionHandler) {
+            _uiState.postValue(UIState.InProgress)
+            appDataSource.getBestsellers()?.let{
+                _uiState.postValue(UIState.OnSuccess)
+                _bestsellersList.postValue(it)
+            }
         }
     }
 }

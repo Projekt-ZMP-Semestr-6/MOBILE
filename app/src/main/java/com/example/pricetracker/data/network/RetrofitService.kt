@@ -37,4 +37,7 @@ interface RetrofitService {
 
     @DELETE("/api/user/delete")
     suspend fun deleteAccount(@Body passwordModel: PasswordModel): Response<Any>
-} //    : Response<ArrayList<PriceItemModel>>?
+
+    @GET("/api/bestsellers")
+    suspend fun getBestsellers(): Response<ArrayList<GameModel>>
+} //    : Response<ArrayList<BestsellerModel>>?
